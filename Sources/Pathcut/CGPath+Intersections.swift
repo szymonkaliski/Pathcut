@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Valentin Radu on 13/01/2020.
 //
@@ -70,7 +70,7 @@ public struct CGSpline: Equatable {
         }
     }
 
-    let points: [CGPoint]
+    public let points: [CGPoint]
     let kind: Kind
     let collinearity: Collinearity
     init(kind: Kind, points: [CGPoint]) {
