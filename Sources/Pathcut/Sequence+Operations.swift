@@ -9,18 +9,17 @@
 import Foundation
 
 extension Sequence {
-    func group(_ maxGroupSize: Int) -> [[Element]] {
-        reduce([[Element]]()) { (subdivs, subdiv) in
-            var columns = subdivs
-            var row = columns.popLast() ?? []
-            if row.count < maxGroupSize {
-                row.append(subdiv)
-                columns.append(row)
-            }
-            else {
-                columns.append(contentsOf: [row, [subdiv]])
-            }
-            return columns
-        }
+  func group(_ maxGroupSize: Int) -> [[Element]] {
+    reduce([[Element]]()) { subdivs, subdiv in
+      var columns = subdivs
+      var row = columns.popLast() ?? []
+      if row.count < maxGroupSize {
+        row.append(subdiv)
+        columns.append(row)
+      } else {
+        columns.append(contentsOf: [row, [subdiv]])
+      }
+      return columns
     }
+  }
 }
